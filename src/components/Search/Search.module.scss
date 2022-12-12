@@ -1,1 +1,26 @@
-.search {}
+.search {
+    padding-left: 4rem;
+    background: url("../../assets/icons/search.svg") no-repeat 24px, rgba(0, 0, 0, 0.1);
+    background-size: 24px;
+    width: 344px;
+    height: 64px;
+    /* Black/10 */
+    /* Grey/700 */
+    border: 1px solid #323B54;
+    border-radius: 12px;
+    outline: none;
+    outline-color: transparent;
+    color: #ffffff;
+
+    &::placeholder {
+        /* Caption */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        /* identical to box height, or 114% */
+        /* Grey/600 */
+        color: #475069;
+    }
+}
