@@ -1,11 +1,19 @@
-import styles from './Search.module.css'
+import PropTypes from 'prop-types'
 
-const Search = () => {
+import styles from './Search.module.scss'
+
+const Search = ({ placeholder }) => {
     return (
-        <div className={styles.search}>
-            Search
-        </div>
+        <input
+            type="text"
+            className={styles.search}
+            placeholder={placeholder}
+        />
     )
+}
+
+Search.propTypes = {
+    placeholder: PropTypes.string,
 }
 
 export default Search

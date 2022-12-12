@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 
+import Search from '../Search/Search'
+
 import styles from './Hero.module.scss'
 
 const Hero = ({ title, subtitle, isReversed }) => {
@@ -25,6 +27,11 @@ const Hero = ({ title, subtitle, isReversed }) => {
     return (
         <div className={styles.hero}>
             {renderContent()}
+            <div className={styles.hero__search}>
+                <Search
+                    placeholder="Search Movies or TV Shows"
+                />
+            </div>
         </div>
     )
 }
