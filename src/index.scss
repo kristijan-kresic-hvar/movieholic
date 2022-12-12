@@ -1,4 +1,13 @@
 :root {
+  // colors
+  --color-primary: #5A4AF4;
+  --color-secondary: #1EA5FC;
+  --color-tertiary: #B66DFF;
+  --color-success: #05CE91;
+  --color-error: #FF6161;
+  --color-warning: #FFAD49;
+  --color-background: #121829;
+
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -14,7 +23,7 @@
 
 body {
   width: 100%;
-  background: url('./assets/img/background.png'), #121829;
+  background: url('./assets/img/background.png'), var(--color-background);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
