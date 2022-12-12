@@ -1,1 +1,31 @@
-.navbar {}
+.navbar {
+    width: 100%;
+    min-height: 80px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    gap: 2rem;
+
+    @media only screen and (max-width: 520px) {
+        flex-direction: column;
+    }
+
+    &__logo {
+        img {
+            width: 40px;
+            object-fit: contain;
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @media only screen and (max-width: 520px) {
+            flex-direction: column;
+        }
+    }
+}
