@@ -1,1 +1,35 @@
-.nav_item {}
+.nav_item {
+    /* Link/Regular */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.02em;
+    /* Grey/200 */
+    color: #A8AEBF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    &:nth-child(2) {
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: 520px) {
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    img {
+        margin-left: 1rem;
+        width: 16px;
+        object-fit: contain;
+    }
+}
