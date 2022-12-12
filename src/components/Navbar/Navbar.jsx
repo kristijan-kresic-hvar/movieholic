@@ -19,7 +19,7 @@ const Navbar = () => {
                     text="TV Shows"
                 />
                 <NavItem
-                    text="Suggest me"
+                    text="Login"
                     icon={arrowRightSVG}
                 />
             </div>
