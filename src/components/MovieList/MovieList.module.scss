@@ -1,1 +1,43 @@
-.movie_list {}
+.movie_list {
+
+    &__info {
+        /* Heading/H3 */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 40px;
+        /* identical to box height, or 125% */
+        letter-spacing: -0.02em;
+        /* Grey/400 */
+        color: #767E94;
+
+        span {
+            /* Heading/H3 */
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            /* or 150% */
+            /* Grey/400 */
+            color: #767E94;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    &__item {
+        flex: 25%;
+
+        @media (max-width: 768px) {
+            flex: 50%;
+        }
+    }
+}
