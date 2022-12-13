@@ -11,13 +11,14 @@
     outline: none;
     outline-color: transparent;
     color: #ffffff;
+    font-size: 0.875rem;
 
     &::placeholder {
         /* Caption */
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 16px;
         /* identical to box height, or 114% */
         /* Grey/600 */

@@ -23,6 +23,7 @@
 
 body {
   width: 100%;
+  min-width: 360px;
   background: url('./assets/img/background.png'), var(--color-background);
   background-size: cover;
   background-attachment: fixed;
