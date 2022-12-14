@@ -82,6 +82,7 @@
             color: #EBEEF5;
             margin-left: 12px;
             transition: color ease-in-out .3s;
+            display: inline-block;
 
             &:hover {
                 color: var(--color-primary);
