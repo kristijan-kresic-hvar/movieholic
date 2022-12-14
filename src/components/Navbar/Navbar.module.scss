@@ -1,15 +1,26 @@
 .navbar {
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     min-height: 80px;
-    background: transparent;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
-    gap: 2rem;
+    background: rgba(18, 24, 41, 0.8);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 110;
 
-    @media only screen and (max-width: 520px) {
-        flex-direction: column;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     &__logo {
@@ -23,9 +34,5 @@
         display: flex;
         align-items: center;
         gap: 2rem;
-
-        @media only screen and (max-width: 520px) {
-            flex-direction: column;
-        }
     }
 }
