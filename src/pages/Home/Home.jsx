@@ -5,30 +5,45 @@ import styles from './Home.module.scss'
 
 import Hero from '../../components/Hero/Hero'
 import MovieList from '../../components/MovieList/MovieList'
+import FilterList from '../../components/FilterList/FilterList'
+import FilterItem from '../../components/FilterItem/FilterItem'
 
 const Home = () => {
 
-    const { getNowPlayingMovies } = useTMDB()
+    const {
+        getNowPlayingMovies,
+        getTVShowsAiringToday
+    } = useTMDB()
 
     const [movies, setMovies] = useState([])
     const [totalResults, setTotalResults] = useState(0)
     const [totalPages, setTotalPages] = useState(0)
     const [page, setPage] = useState(1)
+    const [activeFilter, setActiveFilter] = useState('movies')
+
+    const fetchMovies = async (signal = null) => {
+        const response = await getNowPlayingMovies(1, signal)
+        if (response) {
+            setMovies(response.results)
+            setTotalResults(response.total_results)
+            setTotalPages(response.total_pages)
+            setActiveFilter('movies')
+        }
+    }
+
+    const fetchTVShows = async (signal = null) => {
+        const response = await getTVShowsAiringToday(1, signal)
+        if (response) {
+            setMovies(response.results)
+            setTotalResults(response.total_results)
+            setTotalPages(response.total_pages)
+            setActiveFilter('tv_shows')
+        }
+    }
 
     useEffect(() => {
-
         const controller = new AbortController()
-
-        const fetchMovies = async () => {
-            const response = await getNowPlayingMovies(1, controller.signal)
-            if (response) {
-                setMovies(response.results)
-                setTotalResults(response.total_results)
-                setTotalPages(response.total_pages)
-            }
-        }
-        fetchMovies()
-
+        fetchMovies(controller.signal)
         return () => {
             controller.abort()
         }
@@ -41,9 +56,23 @@ const Home = () => {
                     title="Movieholic"
                     subtitle="We make it easy to track your watched movies and tv shows! 😉"
                 />
+                <div className={styles.home__filter_list}>
+                    <FilterList>
+                        <FilterItem
+                            title="Movies"
+                            handleClick={fetchMovies}
+                            isActive={activeFilter === 'movies'}
+                        />
+                        <FilterItem
+                            title="TV Shows"
+                            handleClick={fetchTVShows}
+                            isActive={activeFilter === 'tv_shows'}
+                        />
+                    </FilterList>
+                </div>
                 <div className={styles.home__movie_list}>
                     <MovieList
-                        title="Now Playing"
+                        title={activeFilter === 'movies' ? 'Now Playing' : 'Airing Today'}
                         total={totalResults}
                         movies={movies}
                     />

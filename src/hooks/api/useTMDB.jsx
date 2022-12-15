@@ -7,7 +7,11 @@ const useTMDB = () => {
             const response = await axios.get(`https://api.themoviedb.org/3/movie/latest?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`)
             return response.data
         } catch (err) {
-            console.error(err)
+            if (abortSignal && abortSignal.aborted) {
+                return
+            }
+
+            console.log(err)
         }
     }
 
@@ -21,7 +25,25 @@ const useTMDB = () => {
             return response.data
         }
         catch (err) {
-            if (abortSignal.aborted) {
+            if (abortSignal && abortSignal.aborted) {
+                return
+            }
+
+            console.log(err)
+        }
+    }
+
+    const getTVShowsAiringToday = async (page = 1, abortSignal = null) => {
+        try {
+            const response = await axios.get(
+                `https://api.themoviedb.org/3/tv/airing_today?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=${page}`
+                , {
+                    signal: abortSignal
+                })
+            return response.data
+        }
+        catch (err) {
+            if (abortSignal && abortSignal.aborted) {
                 return
             }
 
@@ -36,7 +58,7 @@ const useTMDB = () => {
             })
             return response.data
         } catch (err) {
-            if (abortSignal.aborted) {
+            if (abortSignal && abortSignal.aborted) {
                 return
             }
 
@@ -47,7 +69,8 @@ const useTMDB = () => {
     return {
         getLatestMovies,
         getNowPlayingMovies,
-        getMovieDetails
+        getMovieDetails,
+        getTVShowsAiringToday
     }
 }
 export default useTMDB

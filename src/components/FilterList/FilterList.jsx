@@ -1,11 +1,17 @@
+import PropTypes from 'prop-types'
+
 import styles from './FilterList.module.scss'
 
-const FilterList = () => {
+const FilterList = ({ children }) => {
     return (
         <div className={styles.filter_list}>
-            FilterList
+            {children}
         </div>
     )
+}
+
+FilterList.propTypes = {
+    children: PropTypes.node.isRequired
 }
 
 export default FilterList
