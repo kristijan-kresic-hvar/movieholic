@@ -7,6 +7,9 @@ import Hero from '../../components/Hero/Hero'
 import MovieList from '../../components/MovieList/MovieList'
 import FilterList from '../../components/FilterList/FilterList'
 import FilterItem from '../../components/FilterItem/FilterItem'
+import Button from '../../components/Button/Button'
+
+import arrowRightSVG from '../../assets/icons/arrow_right.svg'
 
 const Home = () => {
 
@@ -76,6 +79,12 @@ const Home = () => {
                         total={totalResults}
                         movies={movies}
                     />
+                </div>
+                <div className={styles.home__load_more}>
+                    <Button
+                    >
+                        Load More
+                    </Button>
                 </div>
             </main>
         </div>

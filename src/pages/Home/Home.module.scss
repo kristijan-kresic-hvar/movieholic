@@ -6,4 +6,11 @@
     &__movie_list {
         margin-top: 1.5rem;
     }
+
+    &__load_more {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+    }
 }
