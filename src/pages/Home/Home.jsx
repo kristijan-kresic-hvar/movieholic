@@ -100,6 +100,7 @@ const Home = () => {
                         title={activeFilter === 'movies' ? 'Now Playing' : 'Airing Today'}
                         total={totalResults}
                         movies={movies}
+                        dataType={activeFilter === 'movies' ? 'movie' : 'tv'}
                     />
                 </div>
                 {page < totalPages &&

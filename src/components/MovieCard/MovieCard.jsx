@@ -8,12 +8,12 @@ import styles from './MovieCard.module.scss'
 
 const image_url_prefix = 'https://image.tmdb.org/t/p/w500'
 
-const MovieCard = ({ data }) => {
+const MovieCard = ({ data, dataType }) => {
 
     const posterRef = useRef(null)
 
     return (
-        <Link to={`/movie/${data.id}`}>
+        <Link to={`/${dataType}/${data.id}`}>
             <div className={styles.movie_card}>
                 <div className={styles.movie_card__rating}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,8 @@ const MovieCard = ({ data }) => {
 }
 
 MovieCard.propTypes = {
-    data: PropTypes.shape({}).isRequired
+    data: PropTypes.shape({}).isRequired,
+    dataType: PropTypes.oneOf(['movie', 'tv'])
 }
 
 export default MovieCard
