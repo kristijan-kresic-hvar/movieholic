@@ -9,10 +9,7 @@ import FilterList from '../../components/FilterList/FilterList'
 import FilterItem from '../../components/FilterItem/FilterItem'
 import Button from '../../components/Button/Button'
 
-import arrowRightSVG from '../../assets/icons/arrow_right.svg'
-
 const Home = () => {
-
     const {
         getNowPlayingMovies,
         getTVShowsAiringToday
@@ -23,6 +20,27 @@ const Home = () => {
     const [totalPages, setTotalPages] = useState(0)
     const [page, setPage] = useState(1)
     const [activeFilter, setActiveFilter] = useState('movies')
+
+    const loadMore = async () => {
+        if (activeFilter === 'movies') {
+            const response = await getNowPlayingMovies(page + 1)
+            if (response) {
+                setMovies([...movies, ...response.results])
+                setTotalResults(response.total_results)
+                setTotalPages(response.total_pages)
+                setPage(page + 1)
+            }
+        }
+        else if (activeFilter === 'tv_shows') {
+            const response = await getTVShowsAiringToday(page + 1)
+            if (response) {
+                setMovies([...movies, ...response.results])
+                setTotalResults(response.total_results)
+                setTotalPages(response.total_pages)
+                setPage(page + 1)
+            }
+        }
+    }
 
     const fetchMovies = async (signal = null) => {
         const response = await getNowPlayingMovies(1, signal)
@@ -52,6 +70,10 @@ const Home = () => {
         }
     }, [])
 
+    useEffect(() => {
+        setPage(1)
+    }, [activeFilter])
+
     return (
         <div className={styles.home}>
             <main>
@@ -80,12 +102,15 @@ const Home = () => {
                         movies={movies}
                     />
                 </div>
-                <div className={styles.home__load_more}>
-                    <Button
-                    >
-                        Load More
-                    </Button>
-                </div>
+                {page < totalPages &&
+                    <div className={styles.home__load_more}>
+                        <Button
+                            onClick={loadMore}
+                        >
+                            Load More
+                        </Button>
+                    </div>
+                }
             </main>
         </div>
     )
