@@ -33,7 +33,7 @@ const MovieCard = ({ data }) => {
                 </div>
                 <div className={styles.movie_card__footer}>
                     <p>
-                        {data.title}
+                        {data.title || data.name}
                     </p>
                 </div>
             </div>
