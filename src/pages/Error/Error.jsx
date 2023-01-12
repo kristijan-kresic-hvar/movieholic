@@ -1,11 +1,7 @@
-import styles from './Error.module.scss'
+import styles from "./Error.module.scss";
 
 const Error = () => {
-    return (
-        <div className={styles.error}>
-            Error
-        </div>
-    )
-}
+  return <div className={styles.error}>Error</div>;
+};
 
-export default Error
+export default Error;

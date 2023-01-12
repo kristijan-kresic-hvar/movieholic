@@ -1,11 +1,11 @@
 .filter_item {
-    padding: 0.5rem 2rem;
-    cursor: pointer;
-    transition: background .3s ease-in-out;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 
-    &.active {
-        /* Primary/400 */
-        background: #7B6EF6;
-        border-radius: 8px;
-    }
+  &.active {
+    /* Primary/400 */
+    background: #7b6ef6;
+    border-radius: 8px;
+  }
 }
