@@ -1,37 +1,37 @@
 .nav_item {
-    /* Link/Regular */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 24px;
-    /* identical to box height, or 150% */
-    letter-spacing: 0.02em;
-    /* Grey/200 */
-    color: #A8AEBF;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    transition: text-decoration, color 0.3s ease-in-out;
+  /* Link/Regular */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.02em;
+  /* Grey/200 */
+  color: #a8aebf;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: text-decoration, color 0.3s ease-in-out;
 
+  &:nth-child(2) {
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: 520px) {
     &:nth-child(2) {
-        margin-right: 3rem;
+      margin-right: 0;
     }
+  }
 
-    @media only screen and (max-width: 520px) {
-        &:nth-child(2) {
-            margin-right: 0;
-        }
-    }
+  &:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
 
-    &:hover {
-        color: var(--color-primary);
-        text-decoration: underline;
-    }
-
-    img {
-        margin-left: 1rem;
-        width: 16px;
-        object-fit: contain;
-    }
+  img {
+    margin-left: 1rem;
+    width: 16px;
+    object-fit: contain;
+  }
 }

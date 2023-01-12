@@ -1,33 +1,32 @@
 .hero {
+  margin-top: 10rem;
 
-    margin-top: 10rem;
+  &__title {
+    /* Heading/H1 */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 80px;
+    /* identical to box height, or 125% */
+    letter-spacing: -0.02em;
+    /* Grey/50 */
+    color: #ebeef5;
+  }
 
-    &__title {
-        /* Heading/H1 */
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 4rem;
-        line-height: 80px;
-        /* identical to box height, or 125% */
-        letter-spacing: -0.02em;
-        /* Grey/50 */
-        color: #EBEEF5;
-    }
+  &__subtitle {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    /* or 150% */
+    /* Grey/300 */
+    color: #8e95a9;
+    max-width: 68ch;
+  }
 
-    &__subtitle {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 24px;
-        /* or 150% */
-        /* Grey/300 */
-        color: #8E95A9;
-        max-width: 68ch;
-    }
-
-    &__search {
-        margin-top: 1.5rem;
-    }
+  &__search {
+    margin-top: 1.5rem;
+  }
 }
