@@ -2,11 +2,13 @@ import PropTypes from "prop-types";
 
 import styles from "./MediaHero.module.scss";
 
-const image_url_prefix = "https://image.tmdb.org/t/p/w1200";
+const image_url_prefix = "https://image.tmdb.org/t/p/original";
 
 const MediaHero = ({ mediaTitle, mediaWallpaper }) => {
   const backgroundStyle = {
-    background: `linear-gradient(180deg, rgba(54, 44, 146, 0.4) 0%, rgba(18, 98, 151, 0.4) 100%), url(${mediaWallpaper})`,
+    background: `linear-gradient(180deg, rgba(54, 44, 146, 0.4) 0%, rgba(18, 98, 151, 0.4) 100%), url(${
+      image_url_prefix + mediaWallpaper
+    })`,
     backgroundSize: "cover",
     backgroundPosition: "center top",
     backgroundRepeat: "no-repeat",
